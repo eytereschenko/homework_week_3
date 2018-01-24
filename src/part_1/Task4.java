@@ -1,4 +1,5 @@
 package part_1;
+
 import utils.*;
 /*
 4. Верхний регистр.
@@ -18,6 +19,6 @@ public class Task4 {
         String[] arr = StringUtils.scanStringAndCreateStringArray();
         StringUtils.replaceAllFirstCharsToUpper(arr);
         String result = StringUtils.createStringFromArray(arr);
-        System.out.printf("Your result is:\n%s",result);
+        System.out.printf("Your result is:\n%s", result);
     }
 }

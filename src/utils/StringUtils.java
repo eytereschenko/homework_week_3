@@ -42,7 +42,7 @@ public class StringUtils {
             System.out.println("Enter valid sentence");
         } else {
             for (int i = 0; i < l; i++) {
-                arr[i]=arr[i].substring(0,1).toUpperCase()+arr[i].substring(1);
+                arr[i] = arr[i].substring(0, 1).toUpperCase() + arr[i].substring(1);
             }
         }
     }
@@ -50,9 +50,44 @@ public class StringUtils {
     public static String createStringFromArray(String[] arr) {
         String res = "";
         int l = arr.length;
-        if(l==0) return "";
+        if (l == 0) return "";
         for (int i = 0; i < l; i++) {
             res = res + arr[i] + " ";
+        }
+        return res;
+    }
+
+    public static void replaceWordInString(String[] arr, String word, String newWord) {
+        int l = arr.length;
+        for (int i = 0; l != 0 && i < l; i++) {
+            if (arr[i].equals(word)) {
+                arr[i] = newWord;
+            }
+        }
+    }
+
+    public static String deleteEvenChar(String s) {
+        String res = "";
+        for (int i = 0; i < s.length(); i++) {
+            if (i % 2 != 0) {
+                res = res + String.valueOf(s.charAt(i));
+            }
+        }
+        s = res;
+        return s;
+    }
+
+    public static String invertWord(String s) {
+        String res = "";
+        char[] arr = s.toCharArray();
+        char buffer;
+        for (int i = 0; i < arr.length / 2; i++) {
+            buffer = arr[i];
+            arr[i] = arr[arr.length - 1 - i];
+            arr[arr.length - 1 - i] = buffer;
+        }
+        for (int i = 0; i < arr.length; i++) {
+            res = res + String.valueOf(arr[i]);
         }
         return res;
     }
