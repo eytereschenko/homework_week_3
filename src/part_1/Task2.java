@@ -8,7 +8,7 @@ import utils.*;
  */
 public class Task2 {
     public static void main(String[] args) {
-        String arr[] = utils.StringUtils.scanStringAndCreateStringArray();
+        String arr[] = StringUtils.scanStringAndCreateStringArray();
         String max = StringUtils.findMaxLengthWordInArra(arr);
         String min = StringUtils.findMinLengthWordInArra(arr);
         System.out.printf("The longest word is: %s; its length is %d." +

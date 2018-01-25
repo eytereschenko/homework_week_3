@@ -37,17 +37,23 @@ public class StringUtils {
     }
 
     public static void replaceAllFirstCharsToUpper(String[] arr) {
+        if (arr == null) System.out.println("Enter correct data");
         int l = arr.length;
         if (l == 0) {
             System.out.println("Enter valid sentence");
         } else {
             for (int i = 0; i < l; i++) {
-                arr[i] = arr[i].substring(0, 1).toUpperCase() + arr[i].substring(1);
+                if (arr[i].length()>1) {
+                    arr[i] = arr[i].substring(0, 1).toUpperCase() + arr[i].substring(1);
+                }else {
+                    arr[i] = arr[i].substring(0, 1);
+                }
             }
         }
     }
 
     public static String createStringFromArray(String[] arr) {
+        if (arr == null) System.out.println("Enter correct data");
         String res = "";
         int l = arr.length;
         if (l == 0) return "";
@@ -59,14 +65,16 @@ public class StringUtils {
 
     public static void replaceWordInString(String[] arr, String word, String newWord) {
         int l = arr.length;
-        for (int i = 0; l != 0 && i < l; i++) {
-            if (arr[i].equals(word)) {
+        if(arr == null || word == null) System.out.println("Try to enter correct data");
+        for (int i = 0; i < l; i++) {
+            if (word.equals(arr[i])) {
                 arr[i] = newWord;
             }
         }
     }
 
     public static String deleteEvenChar(String s) {
+        if (s == null) return s;
         String res = "";
         for (int i = 0; i < s.length(); i++) {
             if (i % 2 != 0) {
@@ -78,6 +86,7 @@ public class StringUtils {
     }
 
     public static String invertWord(String s) {
+        if (s == null) return s;
         String res = "";
         char[] arr = s.toCharArray();
         char buffer;
