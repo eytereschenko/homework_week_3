@@ -43,9 +43,9 @@ public class StringUtils {
             System.out.println("Enter valid sentence");
         } else {
             for (int i = 0; i < l; i++) {
-                if (arr[i].length()>1) {
+                if (arr[i].length() > 1) {
                     arr[i] = arr[i].substring(0, 1).toUpperCase() + arr[i].substring(1);
-                }else {
+                } else {
                     arr[i] = arr[i].substring(0, 1);
                 }
             }
@@ -65,7 +65,7 @@ public class StringUtils {
 
     public static void replaceWordInString(String[] arr, String word, String newWord) {
         int l = arr.length;
-        if(arr == null || word == null) System.out.println("Try to enter correct data");
+        if (arr == null || word == null) System.out.println("Try to enter correct data");
         for (int i = 0; i < l; i++) {
             if (word.equals(arr[i])) {
                 arr[i] = newWord;
