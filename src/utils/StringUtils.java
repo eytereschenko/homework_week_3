@@ -101,4 +101,25 @@ public class StringUtils {
         return res;
     }
 
+    public static String deleteAllSpeces(String str) {
+        if (str == null) return str;
+        String strRes = "";
+        char[] c = str.toCharArray();
+        for (int i = 0; i < c.length; i++) {
+            if (c[i] != ' ') {
+                strRes += String.valueOf(c[i]);
+            }
+        }
+        return strRes;
+    }
+
+    public static boolean checkPalindrom(String newStr) {
+        if (newStr == null) return false;
+        for (int i = 0; i < newStr.length() / 2; i++) {
+            if (newStr.toLowerCase().charAt(i) != newStr.toLowerCase().charAt(newStr.length() - i - 1)) {
+                return false;
+            }
+        }
+        return true;
+    }
 }
