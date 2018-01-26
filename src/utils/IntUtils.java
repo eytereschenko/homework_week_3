@@ -62,4 +62,23 @@ public class IntUtils {
         return newArray;
     }
 
+    public static String showPrimitiveFibonachi(int number) {
+        if (number < 0) {
+            System.out.println("Number should be non-negative and non null");
+            return null;
+        }
+        String buffer;
+        String previous = "1";
+        String current = "(0 + 1)";
+        String res = "(1 + (0 + 1))";
+        if (number == 0) return previous;
+        if (number == 1) return previous;
+        if (number == 2) return current;
+        for (int i = 1; i < number - 2; i++) {
+            buffer = res;
+            res = "(" + current +" + " + res + ")";
+            current = buffer;
+        }
+        return res;
+    }
 }
