@@ -76,9 +76,31 @@ public class IntUtils {
         if (number == 2) return current;
         for (int i = 1; i < number - 2; i++) {
             buffer = res;
-            res = "(" + current +" + " + res + ")";
+            res = "(" + current + " + " + res + ")";
             current = buffer;
         }
         return res;
     }
+
+    public static int[][] moveMatrix(int[][] arr, int angle) {
+        if (arr == null) return null;
+        int count = ((angle % 360) / 90);
+        int buffer;
+        int[][] arrResult = new int[arr[0].length][arr.length];
+        for (int k = 0; k < count; k++) {
+            for (int i = 0; i < arr.length; i++) {
+                for (int j = 0; j < arr[0].length; j++) {
+                    arrResult[i][j] = arr[j][i];
+                }
+            }
+
+            for (int i = 0; i < arr.length; i++) {
+                for (int j = 0; j < arr[0].length; j++) {
+                    arr[i][j] = arrResult[i][arrResult.length - 1 - j];
+                }
+            }
+        }
+        return arr;
+    }
+
 }
